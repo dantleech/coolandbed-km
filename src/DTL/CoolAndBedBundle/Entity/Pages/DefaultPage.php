@@ -16,7 +16,7 @@ class DefaultPage extends \Kunstmaan\NodeBundle\Entity\AbstractPage implements \
     /**
      * @var string
      *
-     * @ORM\Column(name="sub_title", type="string", length=100)
+     * @ORM\Column(name="sub_title", type="string", length=100, nullable=true)
      * @Assert\NotBlank()
      */
     private $subtitle;

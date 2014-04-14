@@ -100,6 +100,7 @@
     <hr />
     <ul>
         {% set activeSubnode = nodemenu.getActiveForDepth(1) %}
+        {% set contactNode = nodemenu.getNodeByInternalName('contact') %}
         {% for node in activeSubnode.children %}
             {% if not node.node.isHiddenFromNav() %}
                 <li>
@@ -108,7 +109,12 @@
                     </a>
                 </li>
             {% endif %}
+            {% if contactNode is defined %}
+            {% endif %}
         {% endfor %}
+        <li>
+            <a href="{{ path('_slug', {'url': contactNode.slug }) }}">{{ contactNode.title }}</a>
+        </li>
     </ul>
 </footer>
 
