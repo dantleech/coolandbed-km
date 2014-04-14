@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{% set htmlLocale = app.request.locale|default(defaultlocale)|slice(0,2) %}
+<!--[if lt IE 7]>       <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="{{ htmlLocale }}"> <![endif]-->
+<!--[if IE 7]>          <html class="no-js lt-ie9 lt-ie8" lang="{{ htmlLocale }}">        <![endif]-->
+<!--[if IE 8]>          <html class="no-js lt-ie9" lang="{{ htmlLocale }}">               <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="{{ htmlLocale }}">                  <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ websitetitle | trans }}{% block title %}{% if page is defined and nodemenu.getActiveForDepth(2) is not null %} - {{ get_title_for(page) }}{% endif %}{% endblock %}</title>
+    <meta name="description" content="">
+    {% if page is defined %}
+        {{ render_seo_metadata_for(page) }}
+    {% endif %}
+
+    <!-- favicon - apple touch icons -->
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('apple-touch-icon-144x144-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ asset('apple-touch-icon-120x120-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('apple-touch-icon-114x114-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('apple-touch-icon-72x72-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ asset('apple-touch-icon-precomposed.png') }}">
+
+    <!-- webfonts - should be included through css-method -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- css -->
+    {% include 'DTLCoolAndBedBundle:Layout:_css.html.twig' %}
+
+    <!-- js -->
+    {% include 'DTLCoolAndBedBundle:Layout:_js_header.html.twig' %}
+</head>
+<body {% block extra_body_attributes %}{% endblock %}>
+
+{% include 'DTLCoolAndBedBundle:Layout:_googletagmanager.html.twig' %}
+
+{% block header %}
+    {% set homepagePageNode = nodemenu.getNodeByInternalName('homepage') %}
+    {% set contactNode = nodemenu.getNodeByInternalName('contact') %}
+	<div class="header">
+    	
+    	<div id="headerCont">
+            <a href="/"><div id="headerLogo"></div>	</a>
+            <a href="{{ path('_slug', {'url': contactNode.slug }) }}"><div id="contact">{{ 'Contact us!'|trans() }}</div></a>
+        </div>
+        <div class="clear"></div>
+        <div class="main-nav">
+            <ul class="nav">
+                {% set activeSubnode = nodemenu.getActiveForDepth(1) %}
+                {% for node in activeSubnode.children %}
+                    {% if not node.node.isHiddenFromNav() %}
+                        <li class="{% if(node.active) %}active {% endif %}menu-{{ node.node.internalName }}">
+                            <a href="{{ path('_slug', { 'url': node.slug }) }}" class="navigation__link">{{ node.title }}</a>
+                            {% if node.children|length>0 %}
+                                <!-- Mobile submenu toggle -->
+                                <div class="js-navigation__toggle navigation__toggle navigation__toggle--sublevel">
+                                    <i class="icon-chevron-down"></i>
+                                    <i class="icon-chevron-up"></i>
+                                </div>
+                                <!-- Submenu -->
+                                <ul class="navigation__level navigation__level--sublevel">
+                                    {% for node in node.children %}
+                                        {% if not node.node.isHiddenFromNav() %}
+                                            <li class="navigation__item navigation__item--sublevel {% if(node.active) %}navigation__item--active{% endif %}">
+                                                <a href="{{ path('_slug', { 'url': node.slug }) }}" class="navigation__link navigation__link--sublevel">
+                                                    {{ node.title }}
+                                                    {% if(node.active) %}
+                                                        <i class="icon-chevron-right"></i>
+                                                    {% endif %}
+                                                </a>
+                                            </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+{% endblock %}
+
+<!-- Main -->
+<main role="main">
+    {% block content %}{% endblock %}
+</main>
+
+{% block footer %}
+{% endblock %}
+
+{% include 'DTLCoolAndBedBundle:Layout:_js_footer.html.twig' %}
+</body>
+</html>

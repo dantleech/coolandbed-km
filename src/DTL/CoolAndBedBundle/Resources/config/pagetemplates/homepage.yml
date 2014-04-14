@@ -1,0 +1,8 @@
+name: "Home page"
+rows:
+    - regions:
+        - { name: "slider", span: 12 }
+    - regions:
+        - { name: "left_column", span: 4 }
+        - { name: "right_column", span: 8 }
+template: "DTLCoolAndBedBundle::Pages\\HomePage\\pagetemplate.html.twig"

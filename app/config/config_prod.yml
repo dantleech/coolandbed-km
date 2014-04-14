@@ -1,0 +1,34 @@
+imports:
+    - { resource: config.yml }
+
+framework:
+    validation:
+        cache: apc
+
+doctrine:
+    orm:
+        metadata_cache_driver: apc
+        result_cache_driver: apc
+        query_cache_driver: apc
+
+monolog:
+    handlers:
+        main:
+            type:         fingers_crossed
+            action_level: error
+            handler:      nested
+        sentry:
+            type:  raven
+            dsn:   %sentry.dsn%
+            level: error
+        nested:
+            type:  stream
+            path:  %kernel.logs_dir%/%kernel.environment%.log
+            level: debug
+
+liip_cache_control:
+    rules:
+        - { path: /admin, controls: { private: true, max_age: 0 } }
+        - { path: /preview, controls: { private: true, max_age: 0 } }
+        - { path: ^/_internal, controls: {private: true, max_age: 0 } }
+        - { path: ^/(.+), controls: { public: true, max_age: 360, s_maxage: 360 }, vary: [Cookie,Accept-Encoding] }

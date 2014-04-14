@@ -1,0 +1,13 @@
+services:
+    dtlcoolandbedbundle.default_locale_listener:
+        class: DTL\CoolAndBedBundle\EventListener\DefaultLocaleListener
+        tags:
+          - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }
+        arguments: [%defaultlocale%]
+
+
+    dtlcoolandbedbundle.admin_menu_adaptor:
+        class: DTL\CoolAndBedBundle\Helper\Menu\AdminMenuAdaptor
+        arguments: ["@security.context"]
+        tags:
+            -  { name: 'kunstmaan_admin.menu.adaptor' }

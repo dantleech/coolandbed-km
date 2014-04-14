@@ -1,0 +1,5 @@
+name: "One column page"
+rows:
+    - regions:
+        - { name: "main", span: 12 }
+template: "DTLCoolAndBedBundle::Pages\\Common\\one-column-pagetemplate.html.twig"

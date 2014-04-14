@@ -1,0 +1,11 @@
+dtlcoolandbedbundle_default:
+    resource: "@DTLCoolAndBedBundle/Controller/DefaultController.php"
+    type:     annotation
+    prefix:   /
+
+dtlcoolandbedbundle_satellite_admin_list:
+    resource: @DTLCoolAndBedBundle/Controller/SatelliteAdminListController.php
+    type:     annotation
+    prefix:   /{_locale}/admin/satellite/
+    requirements:
+         _locale: %requiredlocales%

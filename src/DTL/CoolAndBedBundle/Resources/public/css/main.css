@@ -1,0 +1,79 @@
+#contact {
+    color: #1e91cb;
+    font-family: 'Coda Caption', sans-serif;
+    position: absolute;
+    left: 700px;
+}
+
+.page-title h1 {
+    font-family: 'Coda Caption', sans-serif;
+    color: #b4d73a;
+}
+
+#contact {
+    text-align: center;
+}
+
+.main-nav ul.nav li.menu-dormir {
+	background-image: url('../images/cool%26bed_dormir.png');
+    padding-left: 30px;
+}
+
+.main-nav {
+    position: absolute;
+    left: 0px;
+    top: 100px;
+}
+
+.main-nav ul {
+    list-style: none;
+}
+
+.main-nav ul.nav li {
+    float: left;
+	background-repeat:no-repeat;
+    width: 146px;
+    height: 130px;
+    padding-top: 130px;
+    text-align: center;
+    font-family: 'Coda Caption', sans-serif;
+    font-size: 20px;
+}
+
+.main-nav ul.nav li.menu-reserver{
+   background-image: url("../images/cool%26bed_reserver.png");
+}
+
+.main-nav ul.nav li.menu-venir{
+    background-image: url("../images/cool%26bed_venir.png");
+}
+
+.main-nav ul.nav li.menu-bouger{
+	background-image:url('../images/cool%26bed_bouger.png');
+}
+
+.main-nav ul.nav li.menu-visiter{
+	background-image:url('../images/cool%26bed_visiter.png');
+}
+
+ul.nav-pills li.active a {
+    background-color: transparent;
+    color: #1e91cb;
+}
+
+.main-nav ul.nav li.menu-galerie{
+	background-image:url('../images/cool%26bed_galerie_photo.png');
+}
+
+.clear {
+    clear: both;
+}
+
+.main-nav ul.nav {
+    margin-left: 270px;
+    margin-top: -30px;
+}
+
+.page-content {
+    padding: 20px;
+}
