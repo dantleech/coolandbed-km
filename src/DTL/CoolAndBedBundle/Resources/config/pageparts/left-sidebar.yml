@@ -1,3 +1,4 @@
+name: "Left sidebar"
 context: "left_sidebar"
 types:
     - { name: "Header", class: "Kunstmaan\\PagePartBundle\\Entity\\HeaderPagePart" }

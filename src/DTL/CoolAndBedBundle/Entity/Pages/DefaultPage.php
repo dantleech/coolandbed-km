@@ -47,6 +47,7 @@ class DefaultPage extends \Kunstmaan\NodeBundle\Entity\AbstractPage implements \
         return array(
             'DTLCoolAndBedBundle:default-two-column-left',
             'DTLCoolAndBedBundle:default-one-column',
+            'DTLCoolAndBedBundle:gallery',
         );
     }
     /**
@@ -57,6 +58,7 @@ class DefaultPage extends \Kunstmaan\NodeBundle\Entity\AbstractPage implements \
         return array(
             'DTLCoolAndBedBundle:main',
             'DTLCoolAndBedBundle:left-sidebar',
+            'DTLCoolAndBedBundle:gallery',
         );
     }
 

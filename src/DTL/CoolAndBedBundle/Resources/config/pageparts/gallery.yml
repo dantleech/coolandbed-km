@@ -1,0 +1,4 @@
+name: "Gallery"
+context: "gallery"
+types:
+    - { name: "Gallery", class: "DTL\CoolAndBedBundle\Entity\\PageParts\GalleryPagePart" }

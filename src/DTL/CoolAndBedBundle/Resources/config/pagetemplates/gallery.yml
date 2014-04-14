@@ -1,0 +1,9 @@
+name: "Four column page"
+rows:
+    - regions:
+        - { name: "main", span: 12 }
+    - regions:
+        - { name: "gallery", span: 12 }
+
+template: "DTLCoolAndBedBundle::Pages\\Gallery\\view.html.twig"
+

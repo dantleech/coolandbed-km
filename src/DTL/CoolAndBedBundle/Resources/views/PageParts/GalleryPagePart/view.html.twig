@@ -1,0 +1,9 @@
+<div class="row">
+{% for i, image in resource.folder.media  %}
+    <div class="col-xs-6 col-md-3">
+        <a href="{{ asset(image.url) }}" class="thumbnail">
+            <img src="{{ asset(image.url) }}" />
+        </a>
+    </div>
+{% endfor %}
+</div>
