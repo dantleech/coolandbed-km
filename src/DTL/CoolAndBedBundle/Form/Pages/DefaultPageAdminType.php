@@ -24,6 +24,9 @@ class DefaultPageAdminType extends \Kunstmaan\NodeBundle\Form\PageAdminType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         parent::buildForm($builder, $options);
+        $builder->add('subtitle', 'text', array(
+                    'required' => false,
+        ));
     }
 
     /**

@@ -40,6 +40,45 @@
     font-size: 20px;
 }
 
+nav.col-md-1.language-nav {
+    background-color: transparent;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    float: left;
+    padding: 20px;
+}
+
+footer ul li a {
+    color: white;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+.main-nav ul.nav li a {
+    color: #57c3ec;
+}
+
+.main-nav ul.nav li a:hover {
+    color: #b4d73a;
+}
+
+.main-nav ul.nav li div.subtitle-link {
+    font-size: 10px;
+    background-color: #57c3ec;
+    color: black;
+}
+
+.main-nav ul.nav li div.subtitle-link {
+    font-size: 10px;
+    background-color: #b4d73a;
+    color: black;
+}
+
 .main-nav ul.nav li.menu-reserver{
    background-image: url("../images/cool%26bed_reserver.png");
 }
@@ -54,11 +93,6 @@
 
 .main-nav ul.nav li.menu-visiter{
 	background-image:url('../images/cool%26bed_visiter.png');
-}
-
-ul.nav-pills li.active a {
-    background-color: transparent;
-    color: #1e91cb;
 }
 
 .main-nav ul.nav li.menu-galerie{

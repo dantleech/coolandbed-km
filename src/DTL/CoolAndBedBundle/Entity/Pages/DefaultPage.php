@@ -3,6 +3,7 @@
 namespace DTL\CoolAndBedBundle\Entity\Pages;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * DefaultPage
@@ -12,7 +13,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class DefaultPage extends \Kunstmaan\NodeBundle\Entity\AbstractPage implements \Kunstmaan\PagePartBundle\Helper\HasPageTemplateInterface
 {
-
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sub_title", type="string", length=100)
+     * @Assert\NotBlank()
+     */
+    private $subtitle;
 
     /**
      * Returns the default backend form type for this page
@@ -61,5 +68,15 @@ class DefaultPage extends \Kunstmaan\NodeBundle\Entity\AbstractPage implements \
     public function getDefaultView()
     {
         return 'DTLCoolAndBedBundle:Pages:Common/view.html.twig';
+    }
+
+    public function getSubtitle() 
+    {
+        return $this->subtitle;
+    }
+    
+    public function setSubtitle($subtitle)
+    {
+        $this->subtitle = $subtitle;
     }
 }

@@ -43,5 +43,6 @@ class AdminMenuAdaptor implements MenuAdaptorInterface
             }
             $children[] = $menuitem;
         }
+
     }
 }

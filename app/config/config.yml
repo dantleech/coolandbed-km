@@ -138,10 +138,16 @@ white_october_pagerfanta:
 
 kunstmaan_translator:
     enabled: true
-    managed_locales: ['nl', 'en', 'de', 'fr']
+    managed_locales: ['en', 'fr', 'es', 'de']
 
 ekino_new_relic:
     enabled:                    true
     logging:                    true
     log_exceptions:             true
     log_commands:               true
+
+kunstmaan_language_chooser:
+    autodetectlanguage: false
+    showlanguagechooser: true
+    languagechoosertemplate: CoolAndBedBundle:language-chooser.html.twig
+    languagechooserlocales: [en, fr, es]

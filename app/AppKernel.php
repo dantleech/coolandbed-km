@@ -46,6 +46,8 @@ class AppKernel extends Kernel
             new Kunstmaan\TranslatorBundle\KunstmaanTranslatorBundle(),
             new Ekino\Bundle\NewRelicBundle\EkinoNewRelicBundle(),
             new DTL\CoolAndBedBundle\DTLCoolAndBedBundle(),
+            new Kunstmaan\LanguageChooserBundle\KunstmaanLanguageChooserBundle(),
+            new Lunetics\LocaleBundle\LuneticsLocaleBundle(),
     );
 
         if (in_array($this->getEnvironment(), array('dev'))){
