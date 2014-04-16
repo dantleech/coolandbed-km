@@ -40,6 +40,15 @@
     font-size: 20px;
 }
 
+.language-chooser__header {
+    background-image: url('../images/headerContl.png');
+}
+
+.language-chooser__welcome {
+    font-family: 'Coda Caption', sans-serif;
+    font-size: 20px;
+}
+
 nav.col-md-1.language-nav {
     background-color: transparent;
 }

@@ -112,9 +112,11 @@
             {% if contactNode is defined %}
             {% endif %}
         {% endfor %}
+        {% if contactNode %}
         <li>
             <a href="{{ path('_slug', {'url': contactNode.slug }) }}">{{ contactNode.title }}</a>
         </li>
+        {% endif %}
     </ul>
 </footer>
 

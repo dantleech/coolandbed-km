@@ -1,4 +1,4 @@
-{% extends 'DTLCoolAndBedBundle:Page:layout.html.twig' %}
+{% extends 'DTLCoolAndBedBundle:Layout:layout.html.twig' %}
 
 {% block header %}{% endblock %}
 {% block breadcrumbs %}{% endblock %}
@@ -7,24 +7,28 @@
 {% block footer %}{% endblock %}
 
 {% block extra_body_attributes %}
-    class="language-chooser"
 {% endblock %}
 
 {% block content %}
     <div class="container">
         <header role="header" class="text-center language-chooser__header">
-            <img src="{{ asset('bundles/dtlcoolandbed/img/general/demo-logo--white.svg') }}" alt="Demosite" class="site-logo__img--big"/>
+            <img src="{{ asset('bundles/dtlcoolandbed/images/logo-cool&bed.png') }}" alt="Cool and Bed"/>
         </header>
         <nav role="navigation">
+            <center>
             <ul class="list-reset language-chooser__list">
                 {% for lang in languagechooser_languages %}
                     <li class="language-chooser__list-item">
                         <a href="{{ path('_slug', { '_locale': lang }) }}" class="language-chooser__link">
-                            {{ 'lang_chooser.welcome'|trans({}, 'messages', lang) }}
+                            <img src="/flags/{{ lang }}.png" />&nbsp;
+                            <span class="language-chooser__welcome">{{ 'lang_chooser.welcome'|trans({}, 'messages', lang) }}</a>
+                            &nbsp;
+                            <img src="/flags/{{ lang }}.png" />
                         </a>
                     </li>
                 {% endfor %}
             </ul>
+            </center>
         </nav>
     </div>
 {% endblock %}

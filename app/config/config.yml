@@ -92,6 +92,10 @@ liip_imagine:
     data_root: %kernel.root_dir%/../web
     formats : ['jpg', 'jpeg','png', 'gif', 'bmp']
     filter_sets:
+        my_thumb:
+            quality: 75
+            filters:
+                thumbnail: { size: [120, 90], mode: outbound }
         optim:
             quality: 85
             format: jpg
@@ -147,7 +151,7 @@ ekino_new_relic:
     log_commands:               true
 
 kunstmaan_language_chooser:
-    autodetectlanguage: false
+    autodetectlanguage: true
     showlanguagechooser: true
-    languagechoosertemplate: CoolAndBedBundle:language-chooser.html.twig
+    languagechoosertemplate: DTLCoolAndBedBundle:Default:language-chooser.html.twig
     languagechooserlocales: [en, fr, es]
