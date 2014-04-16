@@ -49,6 +49,22 @@
     font-size: 20px;
 }
 
+a.thumbnail {
+    display: block;
+    background-color: #fff;
+    padding: 5px 5px 5px 5px;
+    border: solid 1px;
+    border-color: #444;
+    margin: 10px;
+}
+
+a.thumbnail .caption {
+    padding: 20px;
+    font-family: courier;
+    color: #444;
+    font-size: 20px;
+}
+
 nav.col-md-1.language-nav {
     background-color: transparent;
 }

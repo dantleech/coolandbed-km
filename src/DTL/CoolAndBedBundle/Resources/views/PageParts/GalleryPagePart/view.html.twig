@@ -2,7 +2,8 @@
 {% for i, image in resource.folder.media  %}
     <div class="col-xs-6 col-md-3">
         <a href="{{ asset(image.url) }}" class="thumbnail">
-            <img src="{{ asset(image.url) | imagine_filter(asset(image.url), runtimeConfig) }}" />
+            <img src="{{ image.url | imagine_filter('gallery_thumb') }}" />
+            <div class="caption">HELLO</div>
         </a>
     </div>
 {% endfor %}

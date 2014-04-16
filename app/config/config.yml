@@ -92,10 +92,10 @@ liip_imagine:
     data_root: %kernel.root_dir%/../web
     formats : ['jpg', 'jpeg','png', 'gif', 'bmp']
     filter_sets:
-        my_thumb:
+        gallery_thumb:
             quality: 75
             filters:
-                thumbnail: { size: [120, 90], mode: outbound }
+                thumbnail: { size: [300, 300], mode: inset, format: jpeg }
         optim:
             quality: 85
             format: jpg
