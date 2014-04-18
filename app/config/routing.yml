@@ -58,3 +58,7 @@ KunstmaanTranslatorBundle:
 # KunstmaanLanguageChooserBundle
 _languagechooser:
     resource: .
+
+_imagine:
+    resource: .
+    type:     imagine

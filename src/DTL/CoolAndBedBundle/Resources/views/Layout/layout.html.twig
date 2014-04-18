@@ -41,9 +41,9 @@
 	<div class="header">
     	
     	<div id="headerCont">
-            <a href="/"><div id="headerLogo"></div>	</a>
+            <a href="/{{ app.request.get('_locale') }}"><img id="headerLogo" src="{{ asset('bundles/dtlcoolandbed/images/logo-cool&bed.png') }}" /></a>
             {% if contactNode %}
-            <a href="{{ path('_slug', {'url': contactNode.slug }) }}"><div id="contact">{{ contactNode.title }}</div></a>
+                <a href="{{ path('_slug', {'url': contactNode.slug }) }}"><div id="contact">{{ contactNode.title }}</div></a>
             {% endif %}
         </div>
         
