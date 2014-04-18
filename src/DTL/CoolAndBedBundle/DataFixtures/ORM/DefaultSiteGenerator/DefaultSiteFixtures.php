@@ -95,7 +95,7 @@ class DefaultSiteFixtures extends AbstractFixture implements OrderedFixtureInter
             $dashboard = new DashboardConfiguration();
         }
         $dashboard->setTitle("Dashboard");
-        $dashboard->setContent('<div class="alert alert-info"><strong>Important: </strong>please change these items to the graphs of your own site!</div><iframe src="https://rpm.newrelic.com/public/charts/jjPIEE7OHz9" width="100%" height="300" scrolling="no" frameborder="no"></iframe><iframe src="https://rpm.newrelic.com/public/charts/hmDWR0eUNTo" width="100%" height="300" scrolling="no" frameborder="no"></iframe><iframe src="https://rpm.newrelic.com/public/charts/fv7IP1EmbVi" width="100%" height="300" scrolling="no" frameborder="no"></iframe>');
+        $dashboard->setContent('<iframe src="/visitors.html" width="100%"</iframe>');
         $this->manager->persist($dashboard);
         $this->manager->flush();
     }
