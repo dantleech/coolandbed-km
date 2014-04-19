@@ -1,0 +1,46 @@
+---
+- name: Install packages
+  apt: pkg={{ item }} state=present
+  with_items:
+      - ruby-sass
+      - python-mysqldb
+
+- name: Create dir
+  file: path="{{ web_dir }}" owner=daniel group=daniel state=directory
+
+- name: Clone repo
+  git: repo=https://github.com/dantleech/coolandbed-km dest="{{ web_dir }}" update=yes
+
+- name: Get composer
+  command: wget http://getcomposer.org/composer.phar creates=composer.phar chdir="{{ web_dir }}"
+
+- name: Composer install
+  command: php composer.phar --optimize-autoloader install --prefer-dist --no-ansi --no-interaction chdir="{{ web_dir }}"
+  sudo_user: daniel
+  when: not no_pm
+
+- command: bower install --allow-root chdir="{{ web_dir }}"
+  when: not no_pm
+
+- command: npm install chdir="{{ web_dir }}"
+  when: not no_pm
+
+- command: grunt build chdir="{{ web_dir }}"
+  when: not no_pm
+
+- mysql_db: encoding=utf8 state=present name="{{ db_name }}"
+
+- mysql_user: name="{{ db_user }}" password="{{ db_pass }}" priv="{{ db_name }}.*:ALL" state=present
+
+- name: Configure
+  template: src=parameters.yml dest="{{ web_dir }}/app/config/parameters.yml"
+
+- name: Remove cache
+  sudo_user: daniel
+  command: rm -Rf {{ web_dir }}/app/cache/*
+
+- command: php app/console doctrine:schema:update --force chdir="{{ web_dir }}"
+
+- command: php app/console assets:install --symlink web chdir="{{ web_dir }}"
+
+- command: php app/console assetic:dump chdir="{{ web_dir }}"

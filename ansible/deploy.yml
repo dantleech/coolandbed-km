@@ -1,0 +1,6 @@
+---
+- hosts: all
+  roles:
+      - { role: coolandbed }
+  vars_files:
+      - "vars/config.yml"

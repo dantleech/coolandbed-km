@@ -1,0 +1,5 @@
+db_name: coolandbed
+db_user: coolandbed
+db_pass: coolandbed
+secret: thisisnotaseceret
+web_dir: /var/www/coolandbed
