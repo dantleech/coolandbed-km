@@ -50,10 +50,6 @@ class BehatTestPage extends AbstractPage  implements HasPageTemplateInterface
                 'name'  => 'FormPage',
                 'class' => 'DTL\CoolAndBedBundle\Entity\Pages\FormPage'
             ),
-            array(
-                'name'  => 'SatelliteOverviewPage',
-                'class' => 'DTL\CoolAndBedBundle\Entity\Pages\SatelliteOverviewPage'
-            ),
         );
     }
 

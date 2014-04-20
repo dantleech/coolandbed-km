@@ -148,3 +148,15 @@ footer ul li a {
 .page-content {
     padding: 20px;
 }
+
+footer .blurb {
+    text-align: center;
+    font-size: 10px;
+    color: #3f342a;
+}
+
+footer .blurb a {
+    text-align: center;
+    font-size: 10px;
+    color: #4f453b;
+}

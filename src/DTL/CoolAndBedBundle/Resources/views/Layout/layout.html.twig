@@ -47,25 +47,25 @@
             {% endif %}
         </div>
         
-                    {% if languagechooser_languages is defined %}
-                        <nav class="col-md-1 language-nav">
-                            <span class="language-nav__active-lang">
-                                <i class="icon-chevron-down"></i>
-                                {{ app.request.locale }}
-                                <img src="/flags/{{ app.request.locale }}.png" />
-                            </span>
-                            <ul class="list-reset language-nav__list">
-                                {% for lang in languagechooser_languages %}
-                                    <li class="language-nav__list-item">
-                                        <a href="{{ path('_slug', { '_locale': lang }) }}" class="language-nav__link">
-                                            {{ lang }}
-                                            <img src="/flags/{{ lang }}.png" />
-                                        </a>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        </nav>
-                    {% endif %}
+        {% if languagechooser_languages is defined %}
+            <nav class="col-md-1 language-nav">
+                <span class="language-nav__active-lang">
+                    <i class="icon-chevron-down"></i>
+                    {{ app.request.locale }}
+                    <img src="/flags/{{ app.request.locale }}.png" />
+                </span>
+                <ul class="list-reset language-nav__list">
+                    {% for lang in languagechooser_languages %}
+                        <li class="language-nav__list-item">
+                            <a href="{{ path('_slug', { '_locale': lang }) }}" class="language-nav__link">
+                                {{ lang }}
+                                <img src="/flags/{{ lang }}.png" />
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        {% endif %}
         <div class="clear"></div>
         <div class="main-nav">
             <ul class="nav">
@@ -118,8 +118,11 @@
         </li>
         {% endif %}
     </ul>
+    <div class="clear"></div>
+    <div class="blurb">
+        Site (re) created by <a href="http://www.dantleech.com">Daniel Leech</a> using <a href="http://bundles.kunstmaan.be">Kunstmaan Bundles</a>
+    </div>
 </footer>
-
 {% endblock %}
 
 {% include 'DTLCoolAndBedBundle:Layout:_js_footer.html.twig' %}

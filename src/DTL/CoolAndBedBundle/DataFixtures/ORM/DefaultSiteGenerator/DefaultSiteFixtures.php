@@ -21,8 +21,6 @@ use Kunstmaan\TranslatorBundle\Entity\Translation;
 use DTL\CoolAndBedBundle\Entity\Pages\ContentPage;
 use DTL\CoolAndBedBundle\Entity\Pages\HomePage;
 use DTL\CoolAndBedBundle\Entity\Pages\FormPage;
-use DTL\CoolAndBedBundle\Entity\Satellite;
-use DTL\CoolAndBedBundle\Entity\Pages\SatelliteOverviewPage;
 use DTL\CoolAndBedBundle\Entity\Pages\DefaultPage;
 
 /**

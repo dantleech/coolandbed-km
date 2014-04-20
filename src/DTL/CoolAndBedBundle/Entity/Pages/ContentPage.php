@@ -38,10 +38,6 @@ class ContentPage extends AbstractPage  implements HasPageTemplateInterface
                 'name'  => 'ContentPage',
                 'class' => 'DTL\CoolAndBedBundle\Entity\Pages\ContentPage'
             ),
-            array(
-                'name'  => 'SatelliteOverviewPage',
-                'class' => 'DTL\CoolAndBedBundle\Entity\Pages\SatelliteOverviewPage'
-            )
         );
     }
 
