@@ -151,7 +151,7 @@ ekino_new_relic:
     log_commands:               true
 
 kunstmaan_language_chooser:
-    autodetectlanguage: true
+    autodetectlanguage: false
     showlanguagechooser: true
     languagechoosertemplate: DTLCoolAndBedBundle:Default:language-chooser.html.twig
     languagechooserlocales: [en, fr, es]
