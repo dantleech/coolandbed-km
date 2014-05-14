@@ -6,6 +6,10 @@
     "autoload": {
         "psr-0": { "": "src/" }
     },
+    "repositories" : {
+        "type" : "vcs",
+        "url" : "https://github.com/dantleech/node-bundle"
+    }
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "2.3.*",
