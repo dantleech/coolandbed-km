@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "14578febb4640875de196cfb390e71c7",
+    "hash": "65757a9df46b07ccfa9199a31b04edc8",
     "packages": [
         {
             "name": "ddeboer/data-import",
@@ -2558,17 +2558,17 @@
         },
         {
             "name": "kunstmaan/node-bundle",
-            "version": "v2.3.13",
+            "version": "dev-reinitialize_page_from_language",
             "target-dir": "Kunstmaan/NodeBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle.git",
-                "reference": "3615db8d827bdca29a922db6ad456e93258545d2"
+                "url": "https://github.com/dantleech/KunstmaanNodeBundle.git",
+                "reference": "aaf9e2907e27362f0af2115cd7b73c6b3ff86f3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Kunstmaan/KunstmaanNodeBundle/zipball/3615db8d827bdca29a922db6ad456e93258545d2",
-                "reference": "3615db8d827bdca29a922db6ad456e93258545d2",
+                "url": "https://api.github.com/repos/dantleech/KunstmaanNodeBundle/zipball/aaf9e2907e27362f0af2115cd7b73c6b3ff86f3f",
+                "reference": "aaf9e2907e27362f0af2115cd7b73c6b3ff86f3f",
                 "shasum": ""
             },
             "require": {
@@ -2594,15 +2594,14 @@
                     "Kunstmaan\\NodeBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "authors": [
                 {
                     "name": "Kunstmaan Team",
-                    "email": "support@kunstmaan.be",
-                    "homepage": "http://www.kunstmaan.be/"
+                    "homepage": "http://www.kunstmaan.be/",
+                    "email": "support@kunstmaan.be"
                 }
             ],
             "description": "All websites need pages(we call them nodes) but you probably don't want to spend too much time building them. Plus they should look pretty and contain the right content and that takes time. We make sure you have to spend less time managing your pages but still offer you flexibility so you can focus on more important tasks and don't have to worry about it.",
@@ -2613,7 +2612,10 @@
                 "kunstmaan",
                 "tree"
             ],
-            "time": "2014-04-09 14:25:18"
+            "support": {
+                "source": "https://github.com/dantleech/KunstmaanNodeBundle/tree/reinitialize_page_from_language"
+            },
+            "time": "2014-04-24 18:14:25"
         },
         {
             "name": "kunstmaan/node-search-bundle",
@@ -5714,10 +5716,16 @@
         }
     ],
     "aliases": [
-
+        {
+            "alias": "2.3.17",
+            "alias_normalized": "2.3.17.0",
+            "version": "dev-reinitialize_page_from_language",
+            "package": "kunstmaan/node-bundle"
+        }
     ],
     "minimum-stability": "stable",
     "stability-flags": {
+        "kunstmaan/node-bundle": 20,
         "doctrine/doctrine-migrations-bundle": 20,
         "doctrine/migrations": 20,
         "knplabs/knp-menu": 20,

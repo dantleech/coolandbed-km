@@ -6,10 +6,12 @@
     "autoload": {
         "psr-0": { "": "src/" }
     },
-    "repositories" : {
-        "type" : "vcs",
-        "url" : "https://github.com/dantleech/KunstmaanNodeBundle"
-    }
+    "repositories" : [
+        {
+            "type" : "vcs",
+            "url" : "https://github.com/dantleech/KunstmaanNodeBundle"
+        }
+    ],
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "2.3.*",
@@ -30,7 +32,7 @@
         "kunstmaan/form-bundle": "2.3.*",
         "kunstmaan/media-bundle": "2.3.*",
         "kunstmaan/media-pagepart-bundle": "2.3.*",
-        "kunstmaan/node-bundle@dev-reinitialize_page_from_language": "2.3.*",
+        "kunstmaan/node-bundle": "dev-reinitialize_page_from_language as 2.3.1177",
         "kunstmaan/node-search-bundle": "2.3.*",
         "kunstmaan/pagepart-bundle": "2.3.*",
         "kunstmaan/search-bundle": "2.3.*",

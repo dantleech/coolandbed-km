@@ -145,7 +145,7 @@ kunstmaan_translator:
     managed_locales: ['en', 'fr', 'es', 'de']
 
 ekino_new_relic:
-    enabled:                    true
+    enabled:                    false
     logging:                    true
     log_exceptions:             true
     log_commands:               true
